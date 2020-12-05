@@ -19,10 +19,10 @@ class AddCommand extends Command {
               return new Observable(async observer => {
                 observer.next('1. Check schema')
 
-                await timeout(1000)
+                await timeout(2000)
                 observer.next('2. Diff schema')
 
-                await timeout(1000)
+                await timeout(2000)
                 observer.complete()
               })
             }
@@ -30,7 +30,7 @@ class AddCommand extends Command {
           {
             title: 'Verifying AWS Creds',
             task: async (ctx, task) => {
-              await timeout(1000)
+              await timeout(2000)
               return true
             }
           }], { concurrent: true })
@@ -39,7 +39,7 @@ class AddCommand extends Command {
       {
         title: '2. Creating Uni',
         task: async (ctx, task) => {
-          await timeout(1000)
+          await timeout(2000)
           return true
         }
       },
