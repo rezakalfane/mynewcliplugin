@@ -41,7 +41,26 @@ class AddCommand extends Command {
         task: async (ctx, task) => {
           await timeout(2000)
           return true
-        }
+        },
+      },
+      {
+        title: '3. Verifying Uni',
+        task: async (ctx, task) => {
+          return new Listr([{
+            title: 'Validating JSON Schema',
+            task: () => {
+              return new Observable(async observer => {
+                observer.next('1. Test schema')
+
+                await timeout(2000)
+                observer.next('2. Diff schema')
+
+                await timeout(2000)
+                observer.complete()
+              })
+            }
+          }])
+        },
       },
     ])
 
