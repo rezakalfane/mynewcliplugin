@@ -7,8 +7,6 @@ const timeout = ms => new Promise(res => setTimeout(res, ms))
 
 class AddCommand extends Command {
   async run() {
-    // Command requires auth
-    this.authenticate()
     const { flags } = this.parse(AddCommand)
 
     const tasks = new Listr([
