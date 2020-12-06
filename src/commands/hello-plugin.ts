@@ -23,7 +23,7 @@ hello world from ./src/hello-plugin.ts!
     const {args, flags} = this.parse(HelloPlugin)
 
     const name = flags.name ?? 'world'
-    this.log(`hello ${name} from ./src/commands/hello-plugin.ts plugin`)
+    this.log(`hello ${name} from ./src/commands/hello-plugin.ts PLUGIN`)
     if (args.file && flags.force) {
       this.log(`you input --force and --file: ${args.file}`)
     }
