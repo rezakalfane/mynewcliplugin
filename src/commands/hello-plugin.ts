@@ -4,8 +4,8 @@ export default class HelloPlugin extends Command {
   static description = 'describe the command here'
 
   static examples = [
-    `$ oclif-example hello_plugin
-hello world from ./src/hello_plugin.ts!
+    `$ oclif-example hello-plugin
+hello world from ./src/hello-plugin.ts!
 `,
   ]
 
@@ -23,7 +23,7 @@ hello world from ./src/hello_plugin.ts!
     const {args, flags} = this.parse(HelloPlugin)
 
     const name = flags.name ?? 'world'
-    this.log(`hello ${name} from ./src/commands/hello_plugin.ts plugin`)
+    this.log(`hello ${name} from ./src/commands/hello-plugin.ts plugin`)
     if (args.file && flags.force) {
       this.log(`you input --force and --file: ${args.file}`)
     }
