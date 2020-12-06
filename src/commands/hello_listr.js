@@ -5,10 +5,27 @@ const { Command, flags } = require('@oclif/command')
 
 const timeout = ms => new Promise(res => setTimeout(res, ms))
 
+const { prompt } = require('enquirer');
+
 class AddCommand extends Command {
   async run() {
     const { flags } = this.parse(AddCommand)
 
+    const question = [
+      {
+        type: 'input',
+        name: 'username',
+        message: 'What is your username?'
+      },
+      {
+        type: 'password',
+        name: 'password',
+        message: 'What is your password?'
+      }
+    ];
+    
+    let answers = await prompt(question);
+    console.log(answers);
     const tasks = new Listr([
       {
         title: '1. Validate Uni',
